@@ -1,27 +1,30 @@
 import './style.css';
-import imgUrl from './italian.jpg';
+import homePage from './index.js';
+import showMenu from './menu.js';
+// import aboutUs from './about.js';
+import contactUs from './contact.js';
 
-const content = document.querySelector('#content');
 
-//CREATE HEADER
-const headerTitle = document.createElement('h1');
-headerTitle.textContent = "Original Italian";
-content.appendChild(headerTitle);
+export default function aboutUs() {
+    const content = document.querySelector('#content');
+    const btnHome = document.querySelector('#btn-home');
+    const btnAbout = document.querySelector('#btn-about');
+    const btnMenu = document.querySelector('#btn-menu');
+    const btnContact = document.querySelector('#btn-contact');
 
-//CREATE GREETINGS
-const para1 = document.createElement('p');
-const greetingText = document.createElement('h2');
-greetingText.textContent = 'Ciao 👋';
-content.appendChild(para1);
-content.appendChild(greetingText);
+    btnHome.onclick = homePage;
+    btnMenu.onclick = showMenu;
+    //btnAbout.onclick = aboutUs;
+    btnContact.onclick = contactUs;
 
-//ADD IMAGE
-const bannerImage = document.createElement('img');
-bannerImage.src = 'images/italian.jpg';
-bannerImage.className = 'banner-image';
-content.append(bannerImage);
 
-//CREATE DETAILS
-const para2 = document.createElement('p');
-para2.textContent = "Bibi's is your authentic friendly neighbourhood Italian restaurant. Serving the bestest meals from the freshest ingredients. Balismo!";
-content.appendChild(para2);
+    while (content.firstChild) {
+        content.firstChild.remove();
+    }
+
+
+    const headerTitle = document.createElement('h1');
+    headerTitle.textContent = "About Us";
+    content.appendChild(headerTitle);
+
+}

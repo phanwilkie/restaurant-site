@@ -1,8 +1,10 @@
 import './style.css';
 import homePage from './index.js';
+import showMenu from './menu.js';
+import aboutUs from './about.js';
+// import contactMe from './contact.js';
 
-export default function contactMe() {
-    // console.log('I get called from print.js!');
+export default function contactUs() {
     const content = document.querySelector('#content');
     const btnHome = document.querySelector('#btn-home');
     const btnAbout = document.querySelector('#btn-about');
@@ -10,6 +12,9 @@ export default function contactMe() {
     const btnContact = document.querySelector('#btn-contact');
 
     btnHome.onclick = homePage;
+    btnMenu.onclick = showMenu;
+    btnAbout.onclick = aboutUs;
+    // btnContact.onclick = contactUs;
 
     while (content.firstChild) {
         content.firstChild.remove();

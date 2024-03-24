@@ -1,6 +1,9 @@
 import './style.css';
 import './italian.jpg';
-import contactMe from './contact.js';
+// import homePage from './index.js';
+import showMenu from './menu.js';
+import aboutUs from './about.js';
+import contactUs from './contact.js';
 
 export default function homePage() {
     const content = document.querySelector('#content');
@@ -9,7 +12,10 @@ export default function homePage() {
     const btnMenu = document.querySelector('#btn-menu');
     const btnContact = document.querySelector('#btn-contact');
 
-    btnContact.onclick = contactMe;
+    // btnHome.onclick = homePage;
+    btnMenu.onclick = showMenu;
+    btnAbout.onclick = aboutUs;
+    btnContact.onclick = contactUs;
 
     while (content.firstChild) {
         content.firstChild.remove();
